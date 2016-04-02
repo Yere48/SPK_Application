@@ -81,13 +81,13 @@ public class Midlet extends MIDlet implements CommandListener{
     
     public void startApp() {
         form1 = new Form("Login");
-        logUser = new TextField("Username ","",20,TextField.ANY); //String label,String text,int maxSize,Input Type
+        logUser = new TextField("Username ","",20,TextField.ANY);
         logPass = new TextField("Password ","",20,TextField.PASSWORD);
         cmdExit = new Command("Exit",Command.EXIT,1);
         cmdLogin = new Command("Login",Command.OK,1);
         cmdRegister = new Command("Register",Command.OK,1);
-        form1.append(logUser); //Menambahkan textfield
-        form1.append(logPass); //Menambahkan textfield
+        form1.append(logUser);
+        form1.append(logPass);
         form1.addCommand(cmdExit);
         form1.addCommand(cmdLogin);
         form1.addCommand(cmdRegister);
@@ -276,7 +276,6 @@ public class Midlet extends MIDlet implements CommandListener{
         
         else if(c==cmdOk)
         {
-            //if(!regUser.equals("")&&!regPass.equals("")&&!regName.equals("")&&!regBirth.equals("")&&!regEmail.equals("")){
                 if(cg.isSelected(0)){
                     if((regUser.getString().equals(""))&&(regPass.getString().equals(""))&&(regName.getString().equals(""))&&(regBirth.getString().equals(""))&&(regEmail.getString().equals(""))){ 
                         alert.setType(AlertType.INFO);
@@ -428,7 +427,6 @@ public class Midlet extends MIDlet implements CommandListener{
         cg=new ChoiceGroup("Sex", ChoiceGroup.POPUP);
         cg.append("Male", null);
         cg.append("Female", null);
-        //regSex=new TextField("Sex", "", 20, TextField.ANY);
         form2.append(regUser);
         form2.append(regPass);
         form2.append(regName);
