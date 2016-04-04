@@ -388,6 +388,7 @@ public class Midlet extends MIDlet implements CommandListener{
             }
             else{
                 byte[] temp=null;
+                form4 =new Form("Data Penduduk");
                 try {
                     re=rs1.enumerateRecords(null, null, false);
                     while(re.hasNextElement()){
@@ -398,15 +399,15 @@ public class Midlet extends MIDlet implements CommandListener{
                         try {
                             String a1=dis.readUTF();
                             String b1=dis.readUTF();
-                            form4 =new Form("Data Penduduk");
-                            form4.append("Name  : "+a1+" \nStatus : "+b1+" \n----------------------------------------------");
-                            form4.addCommand(cmdBack);
-                            form4.setCommandListener(this);
-                            display.setCurrent(form4);
+                            form4.append("Name  : "+a1+" \nStatus : "+b1+" \n----------------------------------------------\n");
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
                     }
+                form4.addCommand(cmdBack);
+                form4.setCommandListener(this);
+                display.setCurrent(form4);    
+                
                 } catch (InvalidRecordIDException e) {
                     e.printStackTrace();
                 } catch (RecordStoreNotOpenException e){
